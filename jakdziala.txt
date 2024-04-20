@@ -1,0 +1,2 @@
+jest obiekt root i on se ma wlasciwosci Key - jego numer, right i left i jak chcesz wypisac np lewe dziecko to root->Left->Key i tak to dziala ze zawsze od tego roota trzeba jechac
+i w tym pliku bst mozna funkcje w klasie tworzyc . avl w niedziele zrobie dopiero

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include "bst.h"
 
 using namespace std;
 
@@ -35,6 +36,17 @@ int main(int argc, char* argv[]) {
             cin >> elements[i];
         }
     }
+
+    //wywolanie bst
+    if(string(argv[2])=="BST"){
+    BST bst;
+    BSTNode* root = nullptr;
+
+    for (int i = 0; i < nodes; ++i) {
+        root = bst.Insert(root, elements[i]);
+    }
+    }
+
 
    while(true){
         string action = "";
