@@ -14,6 +14,24 @@ void help(){
     cout << "FindMinMax     Find the largest and smallest element" << endl;
     cout << "Exit           Exits the program" << endl;
 }
+
+void choice(string action){
+        if (action == "Help"){
+            help();
+        }
+        else if (action == "Exit"){
+            exit(1);
+        }
+        else if (action == "FindMinMax"){
+            cout<<"minmalny węzeł: "<< bst.Searchmin(root)->Key<<endl;
+            cout<<"maksymalny węzeł: "<< bst.Searchmax(root)->Key<<endl;
+        }
+        else{
+            cout << "Wrong action! Type 'Help'" << endl;
+        }
+}
+
+
     BST bst;
     BSTNode* root = nullptr;
 
@@ -23,15 +41,61 @@ int main(int argc, char* argv[]) {
         cout << "--tree [type of tree: BST/AVL]" << endl;
     }
 
+    bool is_redirected = !isatty(fileno(stdin));
     int nodes;
-    cout << "nodes> ";
-    cin >> nodes;
-    int elements[nodes];
-    cout << "insert> ";
-    for (int i = 0; i < nodes; ++i) {
-        cin >> elements[i];
+    int *elements = nullptr;
+
+
+
+     if (is_redirected) {
+        ostringstream oss;
+        oss << cin.rdbuf(); // Odczytanie całego strumienia wejściowego
+
+        string fileContents = oss.str(); // Pobranie zawartości do string
+
+        istringstream iss(fileContents); // Tworzymy strumień do analizy tekstu
+        string line;
+        
+        int counter = 0;
+        while (getline(iss, line)) {
+            if (counter == 0){
+                nodes = stoi(line);
+                elements = new int[nodes];
+            }
+            else if(counter == 1){
+                istringstream lineStream(line);
+                int element;
+                int index = 0;
+                while (lineStream >> element) {
+                    elements[index++] = element;
+                }
+            }
+            else{
+                string action = line;
+                choice(action);
+            }
+            counter++;
+        }    
     }
-    
+    else{
+        cout << "nodes> ";
+        cin >> nodes;
+        elements = new int[nodes];
+        cout << "insert> ";
+        for (int i = 0; i < nodes; ++i) {
+            cin >> elements[i];
+        }
+
+        while(true){
+            string action = "";
+            cout << "action> ";
+            cin >> action;
+            choice(action);
+        }
+    }
+
+
+
 
     //wywolanie bst
     if(string(argv[2])=="BST"){
@@ -51,26 +115,10 @@ int main(int argc, char* argv[]) {
 
     }
 
+   
+    delete[] elements;
 
-   while(true){
-        string action = "";
-        cout << "action> ";
-        cin >> action;
-
-        if (action == "Help"){
-            help();
-        }
-        else if (action == "Exit"){
-            exit(1);
-        }
-        else if (action == "FindMinMax"){
-            cout<<"minmalny węzeł: "<< bst.Searchmin(root)->Key<<endl;
-            cout<<"maksymalny węzeł: "<< bst.Searchmax(root)->Key<<endl;
-        }
-        else{
-            cout << "Wrong action! Type 'Help'" << endl;
-        }
-   }
+  
 
 
 //12345
