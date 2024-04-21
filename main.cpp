@@ -14,37 +14,41 @@ void help(){
     cout << "FindMinMax     Find the largest and smallest element" << endl;
     cout << "Exit           Exits the program" << endl;
 }
-
-
+    BST bst;
+    BSTNode* root = nullptr;
 
 int main(int argc, char* argv[]) {
-
-    int nodes;
-    int elements[nodes];
-
-
 
     if (string(argv[1]) != "--tree" || (string(argv[2]) != "AVL" && string(argv[2]) != "BST")){
         cout << "--tree [type of tree: BST/AVL]" << endl;
     }
 
-    if (argc < 4){
-        cout << "nodes> ";
-        cin >> nodes;
-        cout << "insert> ";
-        for (int i = 0; i < nodes; ++i) {
-            cin >> elements[i];
-        }
+    int nodes;
+    cout << "nodes> ";
+    cin >> nodes;
+    int elements[nodes];
+    cout << "insert> ";
+    for (int i = 0; i < nodes; ++i) {
+        cin >> elements[i];
     }
+    
 
     //wywolanie bst
     if(string(argv[2])=="BST"){
-    BST bst;
-    BSTNode* root = nullptr;
 
-    for (int i = 0; i < nodes; ++i) {
+    for (int i=0; i<nodes; ++i) {
         root = bst.Insert(root, elements[i]);
     }
+    }
+
+
+    int* sorted=sortarr(elements,nodes);
+    //wywolanie AVL
+    if(string(argv[2])=="AVL"){
+        for(int i=0; i<nodes; i++){
+            root=bst.createAVL(root,sorted,0,nodes-1);
+        }
+
     }
 
 
@@ -58,6 +62,10 @@ int main(int argc, char* argv[]) {
         }
         else if (action == "Exit"){
             exit(1);
+        }
+        else if (action == "FindMinMax"){
+            cout<<"minmalny węzeł: "<< bst.Searchmin(root)->Key<<endl;
+            cout<<"maksymalny węzeł: "<< bst.Searchmax(root)->Key<<endl;
         }
         else{
             cout << "Wrong action! Type 'Help'" << endl;
