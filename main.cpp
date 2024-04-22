@@ -2,8 +2,13 @@
 #include <string>
 #include <sstream>
 #include "bst.h"
+#include <unistd.h>
+
 
 using namespace std;
+
+BST bst;
+BSTNode* root = nullptr;
 
 void help(){
     cout << "Help           Show this message" << endl;
@@ -32,8 +37,7 @@ void choice(string action){
 }
 
 
-    BST bst;
-    BSTNode* root = nullptr;
+    
 
 int main(int argc, char* argv[]) {
 
@@ -45,9 +49,11 @@ int main(int argc, char* argv[]) {
     int nodes;
     int *elements = nullptr;
 
+    
 
 
-     if (is_redirected) {
+
+    if (is_redirected) {
         ostringstream oss;
         oss << cin.rdbuf(); // Odczytanie całego strumienia wejściowego
 
@@ -55,7 +61,7 @@ int main(int argc, char* argv[]) {
 
         istringstream iss(fileContents); // Tworzymy strumień do analizy tekstu
         string line;
-        
+
         int counter = 0;
         while (getline(iss, line)) {
             if (counter == 0){
@@ -71,11 +77,25 @@ int main(int argc, char* argv[]) {
                 }
             }
             else{
+                if(string(argv[2])=="BST"){
+                for (int i=0; i<nodes; ++i) {
+                    root = bst.Insert(root, elements[i]);
+                }
+                }
+                //int* sorted=sortarr(elements,nodes);
+                //wywolanie AVL
+                // if(string(argv[2])=="AVL"){
+                //     for(int i=0; i<nodes; i++){
+                //         root=bst.createAVL(root,sorted,0,nodes-1);
+                //     }
+
+                // }
                 string action = line;
                 choice(action);
             }
             counter++;
-        }    
+        } 
+        
     }
     else{
         cout << "nodes> ";
@@ -85,8 +105,24 @@ int main(int argc, char* argv[]) {
         for (int i = 0; i < nodes; ++i) {
             cin >> elements[i];
         }
+        if(string(argv[2])=="BST"){
+            for (int i=0; i<nodes; ++i) {
+                root = bst.Insert(root, elements[i]);
+            }
+        }
+        //int* sorted=sortarr(elements,nodes);
+        //wywolanie AVL
+        // if(string(argv[2])=="AVL"){
+        //     for(int i=0; i<nodes; i++){
+        //         root=bst.createAVL(root,sorted,0,nodes-1);
+        //     }
+
+        // }
 
         while(true){
+            for (int i=0; i=nodes; i++){
+                cout << elements[i] << endl;
+            }
             string action = "";
             cout << "action> ";
             cin >> action;
@@ -98,22 +134,10 @@ int main(int argc, char* argv[]) {
 
 
     //wywolanie bst
-    if(string(argv[2])=="BST"){
-
-    for (int i=0; i<nodes; ++i) {
-        root = bst.Insert(root, elements[i]);
-    }
-    }
+   
 
 
-    int* sorted=sortarr(elements,nodes);
-    //wywolanie AVL
-    if(string(argv[2])=="AVL"){
-        for(int i=0; i<nodes; i++){
-            root=bst.createAVL(root,sorted,0,nodes-1);
-        }
-
-    }
+    
 
    
     delete[] elements;
