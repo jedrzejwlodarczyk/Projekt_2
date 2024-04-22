@@ -21,6 +21,9 @@ void help(){
 }
 
 void choice(string action){
+    int nodestodelete;
+    int *elementstodelete = nullptr;
+
         if (action == "Help"){
             help();
         }
@@ -30,6 +33,20 @@ void choice(string action){
         else if (action == "FindMinMax"){
             cout<<"minmalny węzeł: "<< bst.Searchmin(root)->Key<<endl;
             cout<<"maksymalny węzeł: "<< bst.Searchmax(root)->Key<<endl;
+        }
+        //przeniesienie tego na inne formy wpisywania danych
+        else if (action == "Delete"){
+            cout << "nodes> ";
+            cin >> nodestodelete;
+            elementstodelete = new int[nodestodelete];
+            cout << "delete> ";
+            for (int i = 0; i < nodestodelete; ++i) {
+                cin >> elementstodelete[i];
+                bst.Delete(root,elementstodelete[i]);
+        }
+        }
+        else if (action == "print"){
+            bst.Preorder(root);
         }
         else{
             cout << "Wrong action! Type 'Help'" << endl;
@@ -82,14 +99,14 @@ int main(int argc, char* argv[]) {
                     root = bst.Insert(root, elements[i]);
                 }
                 }
-                //int* sorted=sortarr(elements,nodes);
+                int* sorted=sortarr(elements,nodes);
                 //wywolanie AVL
-                // if(string(argv[2])=="AVL"){
-                //     for(int i=0; i<nodes; i++){
-                //         root=bst.createAVL(root,sorted,0,nodes-1);
-                //     }
+                 if(string(argv[2])=="AVL"){
+                     for(int i=0; i<nodes; i++){
+                         root=bst.createAVL(root,sorted,0,nodes-1);
+                     }
 
-                // }
+                 }
                 string action = line;
                 choice(action);
             }
@@ -110,19 +127,19 @@ int main(int argc, char* argv[]) {
                 root = bst.Insert(root, elements[i]);
             }
         }
-        //int* sorted=sortarr(elements,nodes);
+        int* sorted=sortarr(elements,nodes);
         //wywolanie AVL
-        // if(string(argv[2])=="AVL"){
-        //     for(int i=0; i<nodes; i++){
-        //         root=bst.createAVL(root,sorted,0,nodes-1);
-        //     }
+         if(string(argv[2])=="AVL"){
+             for(int i=0; i<nodes; i++){
+                root=bst.createAVL(root,sorted,0,nodes-1);
+             }
 
-        // }
+         }
 
         while(true){
-            for (int i=0; i=nodes; i++){
-                cout << elements[i] << endl;
-            }
+            //for (int i=0; i=nodes; i++){
+            //    cout << elements[i] << endl;
+            //}
             string action = "";
             cout << "action> ";
             cin >> action;
