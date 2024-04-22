@@ -45,8 +45,16 @@ void choice(string action){
                 bst.Delete(root,elementstodelete[i]);
         }
         }
-        else if (action == "print"){
-            bst.Preorder(root);
+        else if (action == "Print"){
+            cout << "In-Order: ";
+            bst.print_inorder(root);
+            cout << endl;
+            cout << "Post-Order: ";
+            bst.print_postorder(root);
+            cout << endl;
+            cout << "Pre-Order: ";
+            bst.print_preorder(root);
+            cout << endl;
         }
         else{
             cout << "Wrong action! Type 'Help'" << endl;
