@@ -127,13 +127,32 @@ BSTNode * Delete(BSTNode * node,int key)
         }
     return node;
     }
-    void Preorder(BSTNode* node) {
-        if (node == nullptr) {
-            return ;
+    void print_preorder(BSTNode* node){
+        if(node == nullptr){
+            return;
         }
-        cout << node->Key << " "; // Odwiedź węzeł
-        Preorder(node->Left); // Przejście przez lewe poddrzewo
-        Preorder(node->Right); // Przejście przez prawe poddrzewo
+        cout << node->Key << " ";
+        print_preorder(node->Left);
+        print_preorder(node->Right);
+    }
+
+
+    void print_inorder(BSTNode* node){
+        if(node == nullptr){
+            return;
+        }
+        print_inorder(node->Left);
+        cout << node->Key << " ";
+        print_inorder(node->Right); 
+    }
+
+    void print_postorder(BSTNode* node){
+        if(node == nullptr){
+            return;
+        }
+        print_postorder(node->Left);
+        print_postorder(node->Right);
+        cout << node->Key << " ";
     }
     
 
