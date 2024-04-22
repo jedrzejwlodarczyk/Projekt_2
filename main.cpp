@@ -137,9 +137,6 @@ int main(int argc, char* argv[]) {
          }
 
         while(true){
-            //for (int i=0; i=nodes; i++){
-            //    cout << elements[i] << endl;
-            //}
             string action = "";
             cout << "action> ";
             cin >> action;
