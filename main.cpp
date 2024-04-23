@@ -3,6 +3,7 @@
 #include <sstream>
 #include "bst.h"
 #include <unistd.h>
+#include <fstream>
 
 
 using namespace std;
@@ -17,6 +18,7 @@ void help(){
     cout << "Delete_ALL     Delete all elements of the tree" << endl;
     cout << "Rebalance      Rebalance the tree" << endl;
     cout << "FindMinMax     Find the largest and smallest element" << endl;
+    cout << "Export         Export to tickz";
     cout << "Exit           Exits the program" << endl;
 }
 
@@ -64,6 +66,16 @@ void choice(string action){
             bst.print_preorder(root);
             cout << endl;
         }
+        /*
+        else if (action == "Export"){
+        ofstream tickzfile("./export/numbers.txt");
+        if (!tickzfile.is_open()) {
+        cout << "Error opening file: " << endl;
+        return;}
+        tickzfile<<bst.exportTree(root);
+        tickzfile.close();
+        }
+        */
         else{
             cout << "Wrong action! Type 'Help'" << endl;
         }

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 int* sortarr(int arr[], int size);
@@ -170,6 +171,15 @@ public:
         cout << node->Key << " ";
     }
     
-
+   /* 
+    string exportTree(BSTNode* node) {
+    if (!node->Left && !node->Right) {
+        return "\\node {" + to_string(node->Key) + "}";
+    }
+    string l_str = node->Left ? "child {" + exportTree(node->Left) + "}" : "child[missing]";
+    string r_str = node->Right ? "child {" + exportTree(node->Right) + "}" : "child[missing]";
+    return "node {" + to_string(node->Key) + "} {" + l_str + "}} {" + r_str + "}";
+    }
+*/
 
 };
