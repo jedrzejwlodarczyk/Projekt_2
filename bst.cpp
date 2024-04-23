@@ -98,50 +98,63 @@ public:
     }
 
 
-    BSTNode * Delete(BSTNode * node,int key)
-    {
-        if (node == nullptr) {
-            return node;
-        }
-
-        if(key < node->Key){
-            node->Left = Delete(node->Left,key);
-        }
-        else if (key > node->Key) {
-            node->Right = Delete(node->Right, key);
-        }
-
-        else{
-            if (node->Left == nullptr) {
-                BSTNode* temp = node->Right;
-                if (temp != nullptr) {
-                    node->Key = temp->Key;
-                    node->Right = Delete(node->Right, temp->Key);
-                } else {
-                    delete node;
-                    node = nullptr;
-                }
+    BSTNode * Delete(BSTNode*& node,int key)
+        {
+            if (node == nullptr) {
+                return node;
             }
-            else if (node->Right == nullptr) {
-                BSTNode* temp = node->Left;
-                if (temp != nullptr) {
-                    node->Key = temp->Key;
-                    node->Left = Delete(node->Left, temp->Key);
-                } else {
-                    delete node;
-                    node = nullptr;
-                }
+
+            if(key < node->Key){
+                node->Left = Delete(node->Left,key);
             }
-                else{
-                    BSTNode* temp = Searchmin(node->Right);
-                    if(temp != nullptr){
+            else if (key > node->Key) {
+                node->Right = Delete(node->Right, key);
+            }
+
+            else{
+                if (node->Left == nullptr) {
+                    BSTNode* temp = node->Right;
+                    if (temp != nullptr) {
                         node->Key = temp->Key;
                         node->Right = Delete(node->Right, temp->Key);
+                    } else {
+                        delete node;
+                        node = nullptr;
                     }
                 }
+                else if (node->Right == nullptr) {
+                    BSTNode* temp = node->Left;
+                    if (temp != nullptr) {
+                        node->Key = temp->Key;
+                        node->Left = Delete(node->Left, temp->Key);
+                    } else {
+                        delete node;
+                        node = nullptr;
+                    }
+                }
+                    else{
+                        BSTNode* temp = Searchmin(node->Right);
+                        if(temp != nullptr){
+                            node->Key = temp->Key;
+                            node->Right = Delete(node->Right, temp->Key);
+                        }
+                    }
+            }
+        return node;
         }
-    return node;
+    
+    
+   void Deleteall(BSTNode *& node)
+    {
+        if(node == nullptr){
+            return;
+        }
+        Deleteall(node->Left);
+        Deleteall(node->Right);
+        cout << node->Key << " ";
+        node=Delete(node,node->Key);
     }
+
 
 
     void print_preorder(BSTNode* node){
@@ -171,6 +184,7 @@ public:
         print_postorder(node->Right);
         cout << node->Key << " ";
     }
+    
 
 
 };
