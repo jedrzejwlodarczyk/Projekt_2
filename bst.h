@@ -182,4 +182,66 @@ public:
     }
 */
 
+    int vine(BSTNode* node)
+    {
+        int count = 0;
+        BSTNode* tmp = node->Right;
+
+        while (tmp) {
+            if (tmp->Left) {
+                BSTNode* oldTmp = tmp;
+                tmp = tmp->Left;
+                oldTmp->Left = tmp->Right;
+                tmp->Right = oldTmp;
+                node->Right = tmp;
+            }
+
+            else {
+                count++;
+                node = tmp;
+                tmp = tmp->Right;
+            }
+        }
+
+        return count;
+    }
+
+
+    void compress(BSTNode* node, int m)
+    {
+    
+        BSTNode* tmp = node->Right;
+
+        for (int i = 0; i < m; i++) {
+            BSTNode* oldTmp = tmp;
+            tmp = tmp->Right;
+            node->Right = tmp;
+            oldTmp->Right = tmp->Left;
+            tmp->Left = oldTmp;
+            node = tmp;
+            tmp = tmp->Right;
+        }
+    }
+
+
+    BSTNode* DSW(BSTNode* node)
+    {
+        BSTNode* grand = new BSTNode;
+        grand->Key = 0;
+        grand->Right = node;
+
+        int count = vine(grand);
+        int h = log2(count + 1);
+        int m = pow(2, h) - 1;
+        
+        compress(grand, count - m);
+
+        for (m = m / 2; m > 0; m /= 2) {
+            compress(grand, m);
+        }
+        
+        return grand->Right;
+    }
+
+
 };

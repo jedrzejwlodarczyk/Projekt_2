@@ -65,6 +65,9 @@ void choice(string action){
             bst.print_preorder(root);
             cout << endl;
         }
+        else if (action=="Rebalance"){
+            root = bst.DSW(root);
+        }
         /*
         else if (action == "Export"){
         ofstream tickzfile("./export/numbers.txt");
