@@ -25,7 +25,6 @@ void help(){
 void choice(string action){
     int nodestodelete;
     int *elementstodelete = nullptr;
-
         if (action == "Help"){
             help();
         }
