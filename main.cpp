@@ -125,8 +125,6 @@ int main(int argc, char* argv[]) {
                 while (lineStream >> element) {
                     elements[index++] = element;
                 }
-            }
-            else{
                 if(string(argv[2])=="BST"){
                 for (int i=0; i<nodes; ++i) {
                     root = bst.Insert(root, elements[i]);
@@ -140,6 +138,9 @@ int main(int argc, char* argv[]) {
                      }
 
                  }
+            }
+            else{
+                
                 string action = line;
                 choice(action);
             }
