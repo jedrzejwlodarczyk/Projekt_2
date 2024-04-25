@@ -68,6 +68,9 @@ void choice(string action){
         else if (action=="Rebalance"){
             root = bst.DSW(root);
         }
+        else if (action == "Printforbenchmark"){
+             bst.print_inorder(root);
+        }
         /*
         else if (action == "Export"){
         ofstream tickzfile("./export/numbers.txt");
