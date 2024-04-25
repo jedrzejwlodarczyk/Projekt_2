@@ -4,6 +4,7 @@
 #include "bst.h"
 #include <unistd.h>
 #include <fstream>
+#include <chrono>
 
 
 using namespace std;
@@ -18,7 +19,6 @@ void help(){
     cout << "Delete_ALL     Delete all elements of the tree" << endl;
     cout << "Rebalance      Rebalance the tree" << endl;
     cout << "FindMinMax     Find the largest and smallest element" << endl;
-    cout << "Export         Export to tickz";
     cout << "Exit           Exits the program" << endl;
 }
 
