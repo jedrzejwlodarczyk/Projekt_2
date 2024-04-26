@@ -132,12 +132,9 @@ int main(int argc, char* argv[]) {
                 }
                 int* sorted=sortarr(elements,nodes);
                 //wywolanie AVL
-                 if(string(argv[2])=="AVL"){
-                     for(int i=0; i<nodes; i++){
+                if(string(argv[2])=="AVL"){
                          root=bst.createAVL(root,sorted,0,nodes-1);
-                     }
-
-                 }
+                }
             }
             else{
                 
@@ -168,9 +165,7 @@ int main(int argc, char* argv[]) {
         int* sorted=sortarr(elements,nodes);
         //wywolanie AVL
          if(string(argv[2])=="AVL"){
-             for(int i=0; i<nodes; i++){
                 root=bst.createAVL(root,sorted,0,nodes-1);
-             }
 
          }
 

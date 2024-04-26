@@ -1,6 +1,6 @@
 TreeType,InputSize,Time,input_files
 BST,,,degraded_nodes_to_BST_for_Print
-BST,2,Command exited with non-zero status 1 0.00,degraded_nodes_to_BST_for_Exit
+BST,2,Command exited with non-zero status 1 0.06,degraded_nodes_to_BST_for_Exit
 BST,4,Command exited with non-zero status 1 0.00,degraded_nodes_to_BST_for_Exit
 BST,8,Command exited with non-zero status 1 0.00,degraded_nodes_to_BST_for_Exit
 BST,16,Command exited with non-zero status 1 0.00,degraded_nodes_to_BST_for_Exit
@@ -8,13 +8,12 @@ BST,32,Command exited with non-zero status 1 0.00,degraded_nodes_to_BST_for_Exit
 BST,64,Command exited with non-zero status 1 0.00,degraded_nodes_to_BST_for_Exit
 BST,128,Command exited with non-zero status 1 0.00,degraded_nodes_to_BST_for_Exit
 BST,256,Command exited with non-zero status 1 0.00,degraded_nodes_to_BST_for_Exit
-BST,512,Command exited with non-zero status 1 0.00,degraded_nodes_to_BST_for_Exit
-BST,1024,Command exited with non-zero status 1 0.00,degraded_nodes_to_BST_for_Exit
+BST,512,Command exited with non-zero status 1 0.01,degraded_nodes_to_BST_for_Exit
+BST,1024,Command exited with non-zero status 1 0.01,degraded_nodes_to_BST_for_Exit
 BST,2048,Command exited with non-zero status 1 0.02,degraded_nodes_to_BST_for_Exit
 BST,4096,Command exited with non-zero status 1 0.06,degraded_nodes_to_BST_for_Exit
-BST,8192,Command exited with non-zero status 1 0.26,degraded_nodes_to_BST_for_Exit
-BST,16384,Command exited with non-zero status 1 1.02,degraded_nodes_to_BST_for_Exit
-BST,32768,Command exited with non-zero status 1 4.67,degraded_nodes_to_BST_for_Exit
-BST,65536,Command exited with non-zero status 1 19.50,degraded_nodes_to_BST_for_Exit
-BST,131072,Command exited with non-zero status 1 102.65,degraded_nodes_to_BST_for_Exit
-BST,262144,Command terminated by signal 11 200.47,degraded_nodes_to_BST_for_Exit
+BST,8192,Command exited with non-zero status 1 0.25,degraded_nodes_to_BST_for_Exit
+BST,16384,Command exited with non-zero status 1 1.51,degraded_nodes_to_BST_for_Exit
+BST,32768,Command exited with non-zero status 1 4.77,degraded_nodes_to_BST_for_Exit
+BST,65536,Command exited with non-zero status 1 24.09,degraded_nodes_to_BST_for_Exit
+BST,131072,Command exited with non-zero status 1 115.40,degraded_nodes_to_BST_for_Exit

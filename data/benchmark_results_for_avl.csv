@@ -1,0 +1,37 @@
+TreeType,InputSize,Time,input_files
+AVL,,,unique_nodes_to_AVL_for_Print
+AVL,2,Command exited with non-zero status 1 0.00,unique_nodes_to_AVL_for_Exit
+AVL,4,Command exited with non-zero status 1 0.00,unique_nodes_to_AVL_for_Exit
+AVL,8,Command exited with non-zero status 1 0.00,unique_nodes_to_AVL_for_Exit
+AVL,16,Command exited with non-zero status 1 0.00,unique_nodes_to_AVL_for_Exit
+AVL,32,Command exited with non-zero status 1 0.00,unique_nodes_to_AVL_for_Exit
+AVL,64,Command exited with non-zero status 1 0.00,unique_nodes_to_AVL_for_Exit
+AVL,128,Command exited with non-zero status 1 0.00,unique_nodes_to_AVL_for_Exit
+AVL,256,Command exited with non-zero status 1 0.01,unique_nodes_to_AVL_for_Exit
+AVL,512,Command exited with non-zero status 1 0.02,unique_nodes_to_AVL_for_Exit
+AVL,1024,Command exited with non-zero status 1 0.06,unique_nodes_to_AVL_for_Exit
+AVL,2048,Command exited with non-zero status 1 0.25,unique_nodes_to_AVL_for_Exit
+AVL,4096,Command exited with non-zero status 1 1.00,unique_nodes_to_AVL_for_Exit
+AVL,8192,Command exited with non-zero status 1 4.16,unique_nodes_to_AVL_for_Exit
+AVL,16384,Command terminated by signal 9 20.20,unique_nodes_to_AVL_for_Exit
+AVL,32768,Command terminated by signal 9 18.36,unique_nodes_to_AVL_for_Exit
+AVL,65536,Command terminated by signal 9 25.81,unique_nodes_to_AVL_for_Exit
+AVL,131072,Command terminated by signal 9 16.48,unique_nodes_to_AVL_for_Exit
+AVL,262144,Command terminated by signal 9 17.57,unique_nodes_to_AVL_for_Exit
+AVL,524288,Command terminated by signal 9 22.68,unique_nodes_to_AVL_for_Exit
+AVL,2,0.05,unique_nodes_to_AVL_for_FindMinMax
+AVL,4,0.00,unique_nodes_to_AVL_for_FindMinMax
+AVL,8,0.00,unique_nodes_to_AVL_for_FindMinMax
+AVL,16,0.00,unique_nodes_to_AVL_for_FindMinMax
+AVL,32,0.00,unique_nodes_to_AVL_for_FindMinMax
+AVL,64,0.00,unique_nodes_to_AVL_for_FindMinMax
+AVL,128,0.00,unique_nodes_to_AVL_for_FindMinMax
+AVL,256,0.01,unique_nodes_to_AVL_for_FindMinMax
+AVL,512,0.02,unique_nodes_to_AVL_for_FindMinMax
+AVL,1024,0.06,unique_nodes_to_AVL_for_FindMinMax
+AVL,2048,0.23,unique_nodes_to_AVL_for_FindMinMax
+AVL,4096,1.00,unique_nodes_to_AVL_for_FindMinMax
+AVL,8192,4.91,unique_nodes_to_AVL_for_FindMinMax
+AVL,16384,Command terminated by signal 9 20.20,unique_nodes_to_AVL_for_FindMinMax
+AVL,32768,Command terminated by signal 9 21.06,unique_nodes_to_AVL_for_FindMinMax
+AVL,65536,Command terminated by signal 9 17.02,unique_nodes_to_AVL_for_FindMinMax

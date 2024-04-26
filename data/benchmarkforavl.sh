@@ -20,7 +20,7 @@ benchmark() {
 tree_types=("AVL")
 
 # List of input file types
-input_files=("unique_nodes_to_AVL_for_Print" "unique_nodes_to_AVL_for_Exit" "unique_nodes_to_AVL_for_FindMinMax" "unique_nodes_to_AVL_for_Rebalance")
+input_files=("unique_nodes_to_AVL_for_Print" "unique_nodes_to_AVL_for_Exit" "unique_nodes_to_AVL_for_FindMinMax")
 
 # Create or clear the CSV file
 echo "TreeType,InputSize,Time,input_files" > ./data/benchmark_results_for_avl.csv
